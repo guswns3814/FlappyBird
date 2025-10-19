@@ -75,6 +75,7 @@ public class GameManager : MonoBehaviour
         BestScore_text.text = PlayerPrefs.GetInt("BestScore").ToString();
 
         GameOver_Penal.SetActive(true);
+        Time.timeScale = 0f; // 게임이 멈추게 한다
     }
 
     public void GetScore()
@@ -87,6 +88,8 @@ public class GameManager : MonoBehaviour
 
     public void Restart()
     {
+        Debug.Log("RESTART 함수 실행됨!");
         SceneManager.LoadScene("Play");
+        Time.timeScale = 1f; // 게임이 다시 시작되게 한다
     }
 }
